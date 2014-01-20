@@ -1,0 +1,13 @@
+{
+    "name": "simple-app-server",
+    "version": "0.1.0",
+    "author": "Norbert Schmidt (nosch)",
+    "description": "Simple application server.",
+    "engines": {
+        "node": ">= 0.10.22"
+    },
+    "dependencies": {
+        "express": "latest"
+    },
+    "devDependencies": {}
+}
