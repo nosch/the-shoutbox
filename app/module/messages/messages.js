@@ -39,4 +39,16 @@ angular.module('messages', [
                 $scope.messages.splice(index, 1);
             }
         };
+    })
+
+    .controller('MessageListCtrl', function ($scope) {
+        'use strict';
+
+       var generateUser = function () {
+            var prefix = 'User';
+
+            return prefix + Math.floor(Math.random() * 10000);
+        };
+
+        $scope.user = generateUser();
     });

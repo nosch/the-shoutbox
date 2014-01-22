@@ -66,11 +66,12 @@
 
                 <div ng-show="messages.length">
                     <h2>Recent Messages</h2>
-                    <ol>
-                        <li ng-repeat="message in messages">
+                    <ul>
+                        <li ng-repeat="message in messages" ng-controller="MessageListCtrl">
+                            <strong>{{user}} says: </strong>
                             {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
                         </li>
-                    </ol>
+                    </ul>
                 </div>
 
                 <p ng-hide="messages.length"><strong>No messages to show!</strong></p>
