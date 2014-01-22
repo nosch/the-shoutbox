@@ -4,7 +4,8 @@
  */
 angular.module('application', [
         'service.notification',
-        'messages'
+        'messages',
+        'stats'
     ])
 
     .run(function ($rootScope) {

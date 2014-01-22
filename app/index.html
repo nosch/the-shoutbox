@@ -30,51 +30,67 @@
 
         <!-- Page content -->
         <div id="page">
-            <div ng-controller="ApplicationCtrl" id="header">
-                <!-- Alert box for displaying notifications -->
-                <alert-box message="{{notification.message}}"
-                           type="{{notification.type}}"
-                           is-active="notification.active">
-                </alert-box>
 
-                <div class="header">
-                    <h1>{{app.title}}</h1>
+            <div class="row">
+                <div id="sidebar" class="small-3 columns">
+                    <div ng-controller="StatsCtrl">
+                        <h4>Daily stats</h4>
+                        <p>
+                            <strong>Messages: </strong>
+                            {{stats.messageCount}}<br/>
+                            <strong>User: </strong>
+                            {{stats.userCount}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+                <div id="main" class="small-9 columns">
+                    <div ng-controller="ApplicationCtrl" id="header">
+                        <!-- Alert box for displaying notifications -->
+                        <alert-box message="{{notification.message}}"
+                                   type="{{notification.type}}"
+                                   is-active="notification.active">
+                        </alert-box>
 
-            <div ng-controller="MessagesCtrl">
-                <h2>{{heading}}</h2>
-
-                <form class="clearfix">
-                    <div class="small-9 columns">
-                        <div class="row collapse">
-                            <div class="small-9 columns">
-                                <input ng-model="message"
-                                       type="text"
-                                       placeholder="Your message...">
-                            </div>
-                            <div class="small-3 columns">
-                                <button ng-click="save()"
-                                        type="button"
-                                        class="button postfix">
-                                    <i class="fa fa-fw fa-floppy-o"></i> Save
-                                </button>
-                            </div>
+                        <div class="header">
+                            <h1>{{app.title}}</h1>
                         </div>
                     </div>
-                </form>
 
-                <div ng-show="messages.length">
-                    <h2>Recent Messages</h2>
-                    <ul>
-                        <li ng-repeat="message in messages" ng-controller="MessageListCtrl">
-                            <strong>{{user}} says: </strong>
-                            {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
-                        </li>
-                    </ul>
+                    <div ng-controller="MessagesCtrl">
+                        <h2>{{heading}}</h2>
+
+                        <form class="clearfix">
+                            <div class="small-9 columns">
+                                <div class="row collapse">
+                                    <div class="small-9 columns">
+                                        <input ng-model="message"
+                                               type="text"
+                                               placeholder="Your message...">
+                                    </div>
+                                    <div class="small-3 columns">
+                                        <button ng-click="save()"
+                                                type="button"
+                                                class="button postfix">
+                                            <i class="fa fa-fw fa-floppy-o"></i> Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div ng-show="messages.length">
+                            <h2>Recent Messages</h2>
+                            <ul>
+                                <li ng-repeat="message in messages" ng-controller="MessageListCtrl">
+                                    <strong>{{user}} says: </strong>
+                                    {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p ng-hide="messages.length"><strong>No messages to show!</strong></p>
+                    </div>
                 </div>
-
-                <p ng-hide="messages.length"><strong>No messages to show!</strong></p>
             </div>
         </div>
 
@@ -87,5 +103,6 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="service/notification.js"></script>
         <script type="text/javascript" src="module/messages/messages.js"></script>
+        <script type="text/javascript" src="module/stats/stats.js"></script>
     </body>
 </html>
