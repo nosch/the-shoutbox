@@ -29,16 +29,18 @@
         <![endif]-->
 
         <!-- Page content -->
-        <div id="page" ng-controller="ApplicationCtrl">
-            <div class="header">
-                <h1>{{app.title}}</h1>
-            </div>
+        <div id="page">
+            <div ng-controller="ApplicationCtrl" id="header">
+                <div class="header">
+                    <h1>{{app.title}}</h1>
+                </div>
 
-            <!-- Alert box for displaying notifications -->
-            <alert-box message="{{notification.message}}"
-                       type="{{notification.type}}"
-                       is-active="notification.active">
-            </alert-box>
+                <!-- Alert box for displaying notifications -->
+                <alert-box message="{{notification.message}}"
+                           type="{{notification.type}}"
+                           is-active="notification.active">
+                </alert-box>
+            </div>
 
             <div ng-controller="MessagesCtrl">
                 <h2>{{heading}}</h2>
@@ -62,11 +64,14 @@
                     </div>
                 </form>
 
-                <ol ng-show="messages.length">
-                    <li ng-repeat="message in messages">
-                        {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
-                    </li>
-                </ol>
+                <div ng-show="messages.length">
+                    <h2>Recent Messages</h2>
+                    <ol>
+                        <li ng-repeat="message in messages">
+                            {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
+                        </li>
+                    </ol>
+                </div>
 
                 <p ng-hide="messages.length"><strong>No messages to show!</strong></p>
             </div>
