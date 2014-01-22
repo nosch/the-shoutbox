@@ -6,28 +6,28 @@ angular.module('service.notification', [])
     .factory('notification', function ($rootScope) {
         'use strict';
 
-        // Internal notifications.
+        // Event names.
         var MESSAGE_CREATED = 'messageCreated';
         var MESAGE_DELETED = 'messageDeleted';
 
-        // Publish: create-message notification.
+        // Publish the create-message event.
         var createMessage = function (message) {
             $rootScope.$broadcast(MESSAGE_CREATED, {message: message});
         };
 
-        // Subscribe: create-message notification.
+        // Subscribe to the create-message event.
         var onCreateMessage = function($scope, handler) {
             $scope.$on(MESSAGE_CREATED, function(event, args) {
                 handler(args.message);
             });
         };
 
-        // Publish: delete-message notification.
+        // Publish the delete-message event.
         var deleteMessage = function (message) {
             $rootScope.$broadcast(MESAGE_DELETED, {message: message});
         };
 
-        // Subscribe: delete-message notification.
+        // Subscribe to the delete-message event.
         var onDeleteMessage = function ($scope, handler) {
             $scope.$on(MESAGE_DELETED, function (event, args) {
                 handler(args.message);
