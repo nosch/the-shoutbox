@@ -4,8 +4,12 @@
     width: 50%;
 }
 
-.header {
+.page-heading {
     padding: 0 0 20px 0;
+}
+
+#sidebar {
+    padding-top: 8px;
 }
 
 textarea {

@@ -3,9 +3,7 @@
  * @module application
  */
 angular.module('application', [
-        'service.notification',
-        'messages',
-        'stats'
+        'application.config'
     ])
 
     .run(function ($rootScope) {
@@ -27,7 +25,7 @@ angular.module('application', [
 
         // Notification handling
         $scope.notification = {
-            message: 'Shoutbox is now ready to use!',
+            message: 'WELCOME to Shoutbox!',
             type: 'info',
             active: true
         };
@@ -35,13 +33,13 @@ angular.module('application', [
         var onMessageAdd = function (message) {
             $scope.notification.message =  '"' +
                 message.user +
-                '" added a new message!';
+                '" added a new post!';
             $scope.notification.type = 'success';
             $scope.notification.active = true;
         };
 
         var onMessageRemove = function (message) {
-            $scope.notification.message = 'A message from "' +
+            $scope.notification.message = 'A post from "' +
                 message.user  +
                 '" was removed from the list!';
             $scope.notification.type = 'warning';

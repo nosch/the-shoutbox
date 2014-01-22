@@ -1,0 +1,14 @@
+<h2>{{heading}}</h2>
+
+<div ng-repeat="message in messages"
+     class="panel callout radius">
+    <h5>{{message.user}}</h5>
+    <p>{{message.text}}</p>
+    <div>
+        <small>{{message.date}}</small>
+        <a ng-click="remove($index)"
+           class="right">
+            <i class="fa fa-fw fa-trash-o"></i> Remove
+        </a>
+    </div>
+</div>

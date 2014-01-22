@@ -3,17 +3,26 @@
  * @module messages
  */
 angular.module('messages', [
-        'service.notification'
+        'messages.config',
     ])
 
-    .constant('SHOUT_LIST', [
-        {user: 'willy1968', text: 'Hallo Norbert!', date: '22.1.2014 10:40:10'},
-        {user: 'Norbert', text: 'Hallo Blödmann!', date: '22.1.2014 11:36:45'},
-        {user: 'willy1968', text: 'Fresse!', date: '22.1.2014 11:53:03'}
-    ])
-
-    .controller('MessagesCtrl', function ($scope, notification, SHOUT_LIST) {
+    .controller('MessageListCtrl', function ($scope, notification, storage, messages) {
         'use strict';
+
+        $scope.heading = 'Recent posts';
+
+        $scope.messages = messages;
+
+        $scope.remove = function (index) {
+            // Call storage service method.
+            storage.removeMessage(index);
+        };
+    })
+
+    .controller('MessageFormCtrl', function ($scope, $location, notification, storage) {
+        'use strict';
+
+        var message = {};
 
         var generateAlias = function () {
             var prefix = 'Anonymous';
@@ -23,35 +32,21 @@ angular.module('messages', [
 
         $scope.heading = 'Say it loud!';
 
-        $scope.messages = SHOUT_LIST;
-
         $scope.save = function () {
-            var message = {};
-
             if ($scope.shout !== undefined && $scope.shout !== '') {
                 message.text = $scope.shout;
                 message.user = $scope.name || generateAlias();
                 message.date = new Date().toLocaleString('de-de');
 
-                // Add message to list.
-                $scope.messages.push(message);
-
-                // Send application-wide notification.
-                notification.createMessage(message);
+                // Call storage service method.
+                storage.addMessage(message);
 
                 // Empty form fields.
                 $scope.name = '';
                 $scope.shout = '';
-            }
-        };
 
-        $scope.remove = function (index) {
-            if (index !== undefined) {
-                // Send application-wide notification.
-                notification.deleteMessage($scope.messages[index]);
-
-                // Delete message from list.
-                $scope.messages.splice(index, 1);
+                // Redirect
+                $location.path('/messages');
             }
         };
     });

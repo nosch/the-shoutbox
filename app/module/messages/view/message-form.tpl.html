@@ -1,0 +1,24 @@
+<h2>{{heading}}</h2>
+
+<form>
+    <div class="row">
+        <div class="large-12 columns">
+            <input ng-model="name"
+                   type="text"
+                   placeholder="Your name...">
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea ng-model="shout"
+                      placeholder="Your message..."></textarea>
+        </div>
+    </div>
+    <div class="button-bar">
+        <button ng-click="save()"
+                type="button"
+                class="button small">
+            <i class="fa fa-fw fa-lg fa-bullhorn"></i> Shout!
+        </button>
+    </div>
+</form>

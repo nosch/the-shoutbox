@@ -10,20 +10,18 @@ angular.module('stats', [
         'use strict';
 
         var stats = {
-            messageCount: 0,
-            userCount: 0
+            messages: 3,
+            deleted: 0
         };
 
         // Subscribe to create-event of the message module.
         notification.onCreateMessage($scope, function () {
-            stats.messageCount++;
-            stats.userCount++;
+            stats.messages++;
         });
 
         // Subscribe to delete-event of the message module.
         notification.onDeleteMessage($scope, function () {
-            stats.messageCount--;
-            stats.userCount--;
+            stats.deleted++;
         });
 
         $scope.stats = stats;

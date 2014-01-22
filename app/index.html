@@ -32,13 +32,16 @@
         <div id="page">
             <div class="row">
                 <div id="sidebar" class="small-3 columns">
-                    <div ng-controller="StatsCtrl">
-                        <h4>Daily stats</h4>
+                    <div ng-include="'module/stats/view/message-stats.tpl.html'"></div>
+                    <div id="navigation">
+                        <h4>Actions</h4>
                         <p>
-                            <strong>Messages: </strong>
-                            {{stats.messageCount}}<br/>
-                            <strong>User: </strong>
-                            {{stats.userCount}}
+                            <a href="#shout">
+                                <i class="fa fa-fw fa-bullhorn"></i> Shout!
+                            </a> <br/>
+                            <a href="#messages">
+                                <i class="fa fa-fw fa-list"></i> Read posts!
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -50,56 +53,13 @@
                                    is-active="notification.active">
                         </alert-box>
 
-                        <div class="header">
+                        <div class="page-heading">
                             <h1>{{app.title}}</h1>
                         </div>
                     </div>
 
-                    <div ng-controller="MessagesCtrl">
-                        <h2>{{heading}}</h2>
-
-                        <form>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input ng-model="name"
-                                           type="text"
-                                           placeholder="Your name...">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <textarea ng-model="shout"
-                                              placeholder="Your message..."></textarea>
-                                </div>
-                            </div>
-                            <div class="button-bar">
-                                <button ng-click="save()"
-                                        type="button"
-                                        class="button small">
-                                    <i class="fa fa-fw fa-lg fa-bullhorn"></i> Shout!
-                                </button>
-                            </div>
-                        </form>
-
-                        <div ng-show="messages.length">
-                            <h2>Recent Posts</h2>
-
-                            <div ng-repeat="message in messages"
-                                 class="panel callout radius">
-                                <h5>{{message.user}}</h5>
-                                <p>{{message.text}}</p>
-                                <div>
-                                    <small>{{message.date}}</small>
-                                    <a ng-click="remove($index)"
-                                       class="right">
-                                        <i class="fa fa-fw fa-trash-o"></i> Remove
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p ng-hide="messages.length"><strong>No messages to show!</strong></p>
-                    </div>
+                    <!-- Content -->
+                    <div ng-view=""></div>
                 </div>
             </div>
         </div>
@@ -109,10 +69,14 @@
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/foundation/js/foundation.min.js"></script>
         <script src="vendor/angular/angular.min.js"></script>
+        <script src="vendor/angular-route/angular-route.min.js"></script>
         <!-- Custom JS -->
         <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="config.js"></script>
         <script type="text/javascript" src="service/notification.js"></script>
+        <script type="text/javascript" src="service/storage.js"></script>
         <script type="text/javascript" src="module/messages/messages.js"></script>
+        <script type="text/javascript" src="module/messages/config.js"></script>
         <script type="text/javascript" src="module/stats/stats.js"></script>
     </body>
 </html>
