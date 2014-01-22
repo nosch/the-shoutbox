@@ -22,24 +22,28 @@ angular.module('application', [
 
         // General
         $scope.app = {
-            title: 'AngularJS Pub/Sub Pattern'
+            title: 'Shoutbox'
         };
 
         // Notification handling
         $scope.notification = {
-            message: 'Application launched successfully!',
-            type: 'success',
+            message: 'Shoutbox is now ready to use!',
+            type: 'info',
             active: true
         };
 
         var onMessageAdd = function (message) {
-            $scope.notification.message = 'A new message was added to the list!';
+            $scope.notification.message =  '"' +
+                message.user +
+                '" added a new message!';
             $scope.notification.type = 'success';
             $scope.notification.active = true;
         };
 
         var onMessageRemove = function (message) {
-            $scope.notification.message = 'A message was removed from the list!';
+            $scope.notification.message = 'A message from "' +
+                message.user  +
+                '" was removed from the list!';
             $scope.notification.type = 'warning';
             $scope.notification.active = true;
         };
@@ -64,7 +68,7 @@ angular.module('application', [
 
                     $timeout(function () {
                         scope.isActive = false;
-                    }, 1500);
+                    }, 2000);
                 } else {
                     element.fadeOut();
                 }

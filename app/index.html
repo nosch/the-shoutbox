@@ -58,33 +58,44 @@
                     <div ng-controller="MessagesCtrl">
                         <h2>{{heading}}</h2>
 
-                        <form class="clearfix">
-                            <div class="small-9 columns">
-                                <div class="row collapse">
-                                    <div class="small-9 columns">
-                                        <input ng-model="message"
-                                               type="text"
-                                               placeholder="Your message...">
-                                    </div>
-                                    <div class="small-3 columns">
-                                        <button ng-click="save()"
-                                                type="button"
-                                                class="button postfix">
-                                            <i class="fa fa-fw fa-floppy-o"></i> Save
-                                        </button>
-                                    </div>
+                        <form>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input ng-model="name"
+                                           type="text"
+                                           placeholder="Your name...">
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <textarea ng-model="shout"
+                                              placeholder="Your message..."></textarea>
+                                </div>
+                            </div>
+                            <div class="button-bar">
+                                <button ng-click="save()"
+                                        type="button"
+                                        class="button small">
+                                    <i class="fa fa-fw fa-lg fa-bullhorn"></i> Shout!
+                                </button>
                             </div>
                         </form>
 
                         <div ng-show="messages.length">
-                            <h2>Recent Messages</h2>
-                            <ul>
-                                <li ng-repeat="message in messages" ng-controller="MessageListCtrl">
-                                    <strong>{{user}} says: </strong>
-                                    {{message.text}} <a ng-click="remove($index)"><i class="fa fa-fw fa-trash-o"></i> </a>
-                                </li>
-                            </ul>
+                            <h2>Recent Posts</h2>
+
+                            <div ng-repeat="message in messages"
+                                 class="panel callout radius">
+                                <h5>{{message.user}}</h5>
+                                <p>{{message.text}}</p>
+                                <div>
+                                    <small>{{message.date}}</small>
+                                    <a ng-click="remove($index)"
+                                       class="right">
+                                        <i class="fa fa-fw fa-trash-o"></i> Remove
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <p ng-hide="messages.length"><strong>No messages to show!</strong></p>

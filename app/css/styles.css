@@ -7,3 +7,7 @@
 .header {
     padding: 0 0 20px 0;
 }
+
+textarea {
+    height: 100px;
+}
