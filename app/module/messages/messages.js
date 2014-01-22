@@ -44,7 +44,7 @@ angular.module('messages', [
     .controller('MessageListCtrl', function ($scope) {
         'use strict';
 
-       var generateUser = function () {
+        var generateUser = function () {
             var prefix = 'User';
 
             return prefix + Math.floor(Math.random() * 10000);

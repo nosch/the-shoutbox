@@ -8,7 +8,7 @@ angular.module('service.notification', [])
 
         // Event names.
         var MESSAGE_CREATED = 'messageCreated';
-        var MESAGE_DELETED = 'messageDeleted';
+        var MESSAGE_DELETED = 'messageDeleted';
 
         // Publish the create-message event.
         var createMessage = function (message) {
@@ -24,12 +24,12 @@ angular.module('service.notification', [])
 
         // Publish the delete-message event.
         var deleteMessage = function (message) {
-            $rootScope.$broadcast(MESAGE_DELETED, {message: message});
+            $rootScope.$broadcast(MESSAGE_DELETED, {message: message});
         };
 
         // Subscribe to the delete-message event.
         var onDeleteMessage = function ($scope, handler) {
-            $scope.$on(MESAGE_DELETED, function (event, args) {
+            $scope.$on(MESSAGE_DELETED, function (event, args) {
                 handler(args.message);
             });
         };

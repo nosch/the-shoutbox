@@ -15,7 +15,7 @@ angular.module('application', [
         $rootScope.$on('$viewContentLoaded', function () {
             $(document).foundation();
         });
-     })
+    })
 
     .controller('ApplicationCtrl', function ($scope, notification) {
         'use strict';
