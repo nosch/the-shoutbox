@@ -3,7 +3,7 @@
  * @module messages
  */
 angular.module('messages', [
-        'messages.config',
+        'messages.config'
     ])
 
     .controller('MessageListCtrl', function ($scope, notification, storage, messages) {

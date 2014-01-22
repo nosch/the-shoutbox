@@ -20,31 +20,38 @@ angular.module('service.storage', [
                 return collection;
             }
 
-           throw new Error('Could not read items from message storage!');
+           throw new Error('Storage is not readable!');
         };
 
         var add = function (item) {
             if (angular.isObject(item) && !angular.isArray(item)) {
-                notification.createMessage(item);
-
-                return collection.push(item);
+                try {
+                    collection.push(item);
+                    notification.createMessage(item);
+                } catch (e) {
+                    throw e;
+                }
+            } else {
+                throw new TypeError('Can not add item - storage item has to be an object.');
             }
-
-            throw new Error('Could not add item to message storage!');
         };
 
         var remove = function (index) {
             if (
-                angular.isDefined(index) &&
                 angular.isObject(collection[index]) &&
                 !angular.isArray(collection[index])
             ) {
-                notification.deleteMessage(collection[index]);
+                try {
+                    var item = collection[index];
 
-                return collection.splice(index, 1);
+                    collection.splice(index, 1);
+                    notification.deleteMessage(item);
+                } catch (e) {
+                    throw e;
+                }
+            } else {
+                throw new TypeError('Can not delete item - storage item has to be an object.');
             }
-
-            throw new Error('Could not delete item from message storage!');
         };
 
         // Reveal public API.
