@@ -31,15 +31,15 @@
         <!-- Page content -->
         <div id="page">
             <div ng-controller="ApplicationCtrl" id="header">
-                <div class="header">
-                    <h1>{{app.title}}</h1>
-                </div>
-
                 <!-- Alert box for displaying notifications -->
                 <alert-box message="{{notification.message}}"
                            type="{{notification.type}}"
                            is-active="notification.active">
                 </alert-box>
+
+                <div class="header">
+                    <h1>{{app.title}}</h1>
+                </div>
             </div>
 
             <div ng-controller="MessagesCtrl">
