@@ -32,18 +32,10 @@
         <div id="page">
             <div class="row">
                 <div id="sidebar" class="small-3 columns">
+                    <!-- Stats module -->
                     <div ng-include="'module/stats/view/message-stats.tpl.html'"></div>
-                    <div id="navigation">
-                        <h4>Actions</h4>
-                        <p>
-                            <a href="#shout">
-                                <i class="fa fa-fw fa-bullhorn"></i> Shout!
-                            </a> <br/>
-                            <a href="#messages">
-                                <i class="fa fa-fw fa-list"></i> Read posts
-                            </a>
-                        </p>
-                    </div>
+                    <!-- Navigation -->
+                    <div ng-include="'view/navigation.tpl.html'"></div>
                 </div>
                 <div id="main" class="small-9 columns">
                     <div ng-controller="ApplicationCtrl" id="header">

@@ -50,6 +50,18 @@ angular.module('application', [
         notification.onDeleteMessage($scope, onMessageRemove);
     })
 
+    .controller('NavigationCtrl', function ($scope, NAV_ITEMS) {
+        'use strict';
+
+        $scope.navItems = NAV_ITEMS;
+
+        $scope.$on('$routeChangeSuccess', function (eOpts, currentRoute) {
+            if (currentRoute.$$route) {
+                $scope.currentRoute = currentRoute.$$route;
+            }
+        });
+    })
+
     .directive('alertBox', function ($timeout) {
         'use strict';
 

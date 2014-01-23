@@ -11,6 +11,11 @@ angular.module('application.config', [
 
     .constant('DEV_MODE', true)
 
+    .constant('NAV_ITEMS', [
+        {title: 'Shout!', index: 'shout', hash: '#shout', icon: 'fa-bullhorn'},
+        {title: 'Read posts', index: 'messages', hash: '#messages', icon: 'fa-list'}
+    ])
+
     .config(function ($provide, DEV_MODE) {
         'use strict';
 
@@ -34,10 +39,12 @@ angular.module('application.config', [
                 redirectTo: '/messages'
             })
             .when('/error', {
-                templateUrl: 'view/error.tpl.html'
+                templateUrl: 'view/error.tpl.html',
+                index: 'error'
             })
             .when('/404', {
-                templateUrl: 'view/404.tpl.html'
+                templateUrl: 'view/404.tpl.html',
+                index: '404'
             })
             .otherwise({
                 redirectTo: '/404'
