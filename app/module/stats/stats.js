@@ -3,20 +3,25 @@
  * @module stats
  */
 angular.module('stats', [
-        'service.notification'
+        'service.notification',
+        'service.storage'
     ])
 
-    .controller('StatsCtrl', function ($scope, notification) {
+    .controller('StatsCtrl', function ($scope, notification, storage) {
         'use strict';
 
+        var getAmount = function () {
+            return storage.getMessageCount();
+        };
+
         var stats = {
-            messages: 3,
+            amount: getAmount(),
             deleted: 0
         };
 
         // Subscribe to create-event of the message module.
         notification.onCreateMessage($scope, function () {
-            stats.messages++;
+            stats.amount = getAmount();
         });
 
         // Subscribe to delete-event of the message module.

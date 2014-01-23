@@ -12,7 +12,7 @@ angular.module('service.storage', [
         var collection = [
             {user: 'willy1968', text: 'Hallo Norbert!', date: '22.1.2014 10:40:10'},
             {user: 'Norbert', text: 'Hallo Blödmann!', date: '22.1.2014 11:36:45'},
-            {user: 'willy1968', text: 'Fresse!', date: '22.1.2014 11:53:03'}
+            {user: 'willy1968', text: 'Du mich auch!', date: '22.1.2014 11:53:03'}
         ];
 
         var get = function () {
@@ -21,6 +21,14 @@ angular.module('service.storage', [
             }
 
            throw new Error('Storage is not readable!');
+        };
+
+        var getCount = function () {
+            try {
+                return collection.length;
+            } catch (e) {
+                throw e;
+            }
         };
 
         var add = function (item) {
@@ -57,6 +65,7 @@ angular.module('service.storage', [
         // Reveal public API.
         return {
             getMessages: get,
+            getMessageCount: getCount,
             addMessage: add,
             removeMessage: remove
         };
