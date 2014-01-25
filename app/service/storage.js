@@ -10,9 +10,9 @@ angular.module('service.storage', [
         'use strict';
 
         var collection = [
-            {user: 'willy1968', text: 'Hallo Norbert!', date: '22.1.2014 10:40:10'},
-            {user: 'Norbert', text: 'Hallo Blödmann!', date: '22.1.2014 11:36:45'},
-            {user: 'willy1968', text: 'Du mich auch!', date: '22.1.2014 11:53:03'}
+            {user: 'willy1981', text: 'The world won\'t listen!', date: '22.1.2014 10:40:10'},
+            {user: 'amanda', text: 'Say it loud? This is ridiculous!', date: '22.1.2014 11:36:45'},
+            {user: 'jeff', text: '!@#* - WTF?', date: '22.1.2014 11:53:03'}
         ];
 
         var get = function () {
