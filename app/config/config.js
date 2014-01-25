@@ -12,9 +12,9 @@ angular.module('application.config', [
     .constant('DEV_MODE', true)
 
     .constant('NAV_ITEMS', [
-        {title: 'Read posts', index: 'messages', hash: '#messages', icon: 'fa-list'},
-        {title: 'Shout!', index: 'shout', hash: '#shout', icon: 'fa-bullhorn'},
-        {title: 'Contact', index: 'contact', hash: '#contact', icon: 'fa-envelope'}
+        {title: 'Read!', index: 'messages', hash: '#messages', icon: 'fi-eye'},
+        {title: 'Shout!', index: 'shout', hash: '#shout', icon: 'fi-sound'},
+        {title: 'Contact us!', index: 'contact', hash: '#contact', icon: 'fi-mail'}
     ])
 
     .config(function ($provide, DEV_MODE) {
