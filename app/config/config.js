@@ -12,8 +12,9 @@ angular.module('application.config', [
     .constant('DEV_MODE', true)
 
     .constant('NAV_ITEMS', [
+        {title: 'Read posts', index: 'messages', hash: '#messages', icon: 'fa-list'},
         {title: 'Shout!', index: 'shout', hash: '#shout', icon: 'fa-bullhorn'},
-        {title: 'Read posts', index: 'messages', hash: '#messages', icon: 'fa-list'}
+        {title: 'Contact', index: 'contact', hash: '#contact', icon: 'fa-envelope'}
     ])
 
     .config(function ($provide, DEV_MODE) {
@@ -37,6 +38,10 @@ angular.module('application.config', [
         $routeProvider
             .when('/', {
                 redirectTo: '/messages'
+            })
+            .when('/contact', {
+                templateUrl: 'view/contact.tpl.html',
+                index: 'contact'
             })
             .when('/error', {
                 templateUrl: 'view/error.tpl.html',
