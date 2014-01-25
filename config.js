@@ -3,6 +3,6 @@ module.exports = {
         port: 3000
     },
     app: {
-        dir: '/app'
+        dir: 'app'
     }
 };
