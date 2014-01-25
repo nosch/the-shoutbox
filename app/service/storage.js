@@ -20,7 +20,7 @@ angular.module('service.storage', [
                 return collection;
             }
 
-           throw new Error('Storage is not readable!');
+            throw new Error('Storage is not readable!');
         };
 
         var getCount = function () {
