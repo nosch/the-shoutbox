@@ -2,7 +2,7 @@
     "name": "ng-shoutbox",
     "version": "0.1.0",
     "author": "Norbert Schmidt (nosch)",
-    "description": "The shoutbox - a simple AngularJS application.",
+    "description": "The shoutbox - a small AngularJS sample application.",
     "engines": {
         "node": ">= 0.10.22"
     },
