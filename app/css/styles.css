@@ -1,7 +1,5 @@
 #page {
     padding: 1em;
-    margin: 0 auto;
-    width: 50%;
 }
 
 .page-heading {
@@ -18,4 +16,8 @@
 
 textarea {
     height: 100px;
+}
+
+a.shut {
+    color: #1a1a1a;;
 }

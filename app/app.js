@@ -84,7 +84,7 @@ angular.module('application', [
                 }
             });
 
-            element.find('a.close').on('click', function() {
+            element.find('a.shut').on('click', function() {
                 scope.isActive = false;
             });
         };

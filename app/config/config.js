@@ -14,7 +14,7 @@ angular.module('application.config', [
     .constant('NAV_ITEMS', [
         {title: 'Read!', index: 'messages', hash: '#messages', icon: 'fi-eye'},
         {title: 'Shout!', index: 'shout', hash: '#shout', icon: 'fi-sound'},
-        {title: 'Contact us!', index: 'contact', hash: '#contact', icon: 'fi-mail'}
+        {title: 'Contact!', index: 'contact', hash: '#contact', icon: 'fi-mail'}
     ])
 
     .config(function ($provide, DEV_MODE) {
