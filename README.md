@@ -3,7 +3,7 @@
 It's a small AngularJS sample application. The purpose is
 
 * to show how to structure a web app build with Angular,
-* how to implement data transfer and communication between controller and services,
+* how to implement data transfer and communication between loosely coupled modules,
 * how to handle application errors.
 
 # Installation
