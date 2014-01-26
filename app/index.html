@@ -30,30 +30,7 @@
 
         <!-- Page content -->
         <div id="page">
-            <div class="row">
-                <div id="sidebar" class="small-3 columns">
-                    <!-- Stats module -->
-                    <div ng-include="'module/stats/view/message-stats.tpl.html'"></div>
-                    <!-- Navigation -->
-                    <div ng-include="'view/navigation.tpl.html'"></div>
-                </div>
-                <div id="main" class="small-9 columns">
-                    <div ng-cloak ng-controller="ApplicationCtrl" id="header">
-                        <!-- Alert box for displaying notifications -->
-                        <alert-box message="{{notification.message}}"
-                                   type="{{notification.type}}"
-                                   is-active="notification.active">
-                        </alert-box>
-
-                        <div class="page-heading">
-                            <h1 ng-cloak><i ng-class="app.icon"></i> {{app.title}}</h1>
-                        </div>
-                    </div>
-
-                    <!-- Content -->
-                    <div ng-view=""></div>
-                </div>
-            </div>
+            <div ng-include="'view/content.tpl.html'"></div>
         </div>
 
         <!-- Vendor JS -->
