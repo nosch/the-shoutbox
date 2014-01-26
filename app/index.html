@@ -18,7 +18,7 @@
 
         <title>The Shoutbox</title>
     </head>
-    <body ng-cloak>
+    <body>
         <!--[if lt IE 7]>
         <p class="chromeframe">
             You are using an <strong>outdated</strong> browser.' +
@@ -38,7 +38,7 @@
                     <div ng-include="'view/navigation.tpl.html'"></div>
                 </div>
                 <div id="main" class="small-9 columns">
-                    <div ng-controller="ApplicationCtrl" id="header">
+                    <div ng-cloak ng-controller="ApplicationCtrl" id="header">
                         <!-- Alert box for displaying notifications -->
                         <alert-box message="{{notification.message}}"
                                    type="{{notification.type}}"
@@ -46,7 +46,7 @@
                         </alert-box>
 
                         <div class="page-heading">
-                            <h1><i class="fi-megaphone"></i> {{app.title}}</h1>
+                            <h1 ng-cloak><i class="fi-megaphone"></i> {{app.title}}</h1>
                         </div>
                     </div>
 

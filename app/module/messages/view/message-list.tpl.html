@@ -1,6 +1,6 @@
-<h2>{{heading}}</h2>
+<h2 ng-cloak>{{heading}}</h2>
 
-<div ng-repeat="message in messages"
+<div ng-cloak ng-repeat="message in messages"
      class="panel callout radius">
     <h5>{{message.user}}</h5>
     <p>{{message.text}}</p>
