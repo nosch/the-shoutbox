@@ -10,18 +10,15 @@ angular.module('stats', [
     .controller('StatsCtrl', function ($scope, notification, storage) {
         'use strict';
 
-        var getAmount = function () {
-            return storage.getMessageCount();
-        };
-
+        // Default stats data.
         var stats = {
-            amount: getAmount(),
+            new: storage.getMessageCount(),
             deleted: 0
         };
 
         // Subscribe to create-event of the message module.
         notification.onCreateMessage($scope, function () {
-            stats.amount = getAmount();
+            stats.new++;
         });
 
         // Subscribe to delete-event of the message module.
