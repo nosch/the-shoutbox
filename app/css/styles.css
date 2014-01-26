@@ -1,3 +1,7 @@
+.ng-cloak {
+    display: none !important;
+}
+
 #page {
     padding: 1em;
 }
