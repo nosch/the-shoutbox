@@ -20,7 +20,8 @@ angular.module('application', [
 
         // General
         $scope.app = {
-            title: 'Shoutbox'
+            title: 'Shoutbox',
+            icon: 'fi-megaphone'
         };
 
         // Notification handling
