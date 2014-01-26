@@ -26,5 +26,5 @@ angular.module('messages.config', [
                 templateUrl: 'module/messages/view/message-form.tpl.html',
                 controller: 'MessageFormCtrl',
                 index: 'shout'
-            })
+            });
     });

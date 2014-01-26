@@ -1,0 +1,11 @@
+<div ng-controller="ApplicationCtrl" id="header">
+    <!-- Alert box for displaying notifications -->
+    <alert-box message="{{notification.message}}"
+               type="{{notification.type}}"
+               is-active="notification.active">
+    </alert-box>
+
+    <div class="page-heading">
+        <h1><i ng-class="app.icon"></i> {{app.title}}</h1>
+    </div>
+</div>

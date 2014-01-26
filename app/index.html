@@ -28,9 +28,21 @@
         </p>
         <![endif]-->
 
-        <!-- Page content -->
         <div id="page">
-            <div ng-include="'view/content.tpl.html'"></div>
+            <div class="row">
+                <div id="sidebar" class="small-3 columns">
+                    <!-- Stats module -->
+                    <div ng-include="'module/stats/view/message-stats.tpl.html'"></div>
+                    <!-- Navigation -->
+                    <div ng-include="'view/navigation.tpl.html'"></div>
+                </div>
+                <div id="main" class="small-9 columns">
+                    <!-- Header -->
+                    <div ng-include="'view/header.tpl.html'"></div>
+                    <!-- Include modules by routing -->
+                    <div ng-view=""></div>
+                </div>
+            </div>
         </div>
 
         <!-- Vendor JS -->
