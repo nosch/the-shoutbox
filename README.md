@@ -9,7 +9,7 @@ It's a small AngularJS sample application. The purpose is to show
 # Installation
 
 1. Install [node.js and npm](http://nodejs.org/download/ "Download node.js")
-2. $ git clone git@github.com:nosch/ng-shoutbox "shoutbox"
+2. $ git clone git@github.com:nosch/the-shoutbox
 3. $ npm install
 
 # Launch application
