@@ -1,6 +1,6 @@
 module.exports = {
     server: {
-        port: 3000
+        port: 62100
     },
     app: {
         dir: 'app'

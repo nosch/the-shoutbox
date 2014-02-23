@@ -1,5 +1,5 @@
 /**
- * Task Center
+ * The Shoutbox
  * Application server
  */
 var express = require('express');
