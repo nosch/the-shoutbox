@@ -9,7 +9,7 @@ var config = require('./config.js');
 var application = express();
 
 // Middleware: static content
-application.set('port', process.env.PORT || 3000);
+application.set('port', process.env.PORT || config.server.port);
 application.use(express.static(__dirname + '/' + config.app.dir));
 application.use(express.bodyParser());
 application.use(express.logger('dev')); //options: default, short, tiny, dev
