@@ -16,3 +16,6 @@ It's a small AngularJS sample application. The purpose is to show
 
 1. $ node server.js
 2. Open http://localhost:3000 in your browser.
+
+# Demo
+http://shoutbox.schmidt-netzwerk.de
