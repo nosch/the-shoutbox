@@ -2,9 +2,9 @@
 
 It's a small AngularJS sample application. The purpose is to show
 
-* how to structure a web app build with Angular,
-* how to implement data transfer and communication between loosely coupled modules,
-* how to handle application errors.
+* how to structure a web app build with Angular (**modules**, **services**, **DI**),
+* how to implement data transfer and communication between loosely coupled modules (**notification service**, **Publish-subscribe pattern**),
+* how to handle application errors (**decorators**, **$exceptionHandler**).
 
 # Installation
 
